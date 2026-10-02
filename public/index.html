@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="lo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Library — ຝຶກອົບຮົມໄອທີ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <div>
+        <strong>Content Library</strong>
+        <small>ບໍລິການຝຶກອົບຮົມຫຼັກສູດໄອທີ</small>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="context">1 · Context</button>
+      <button class="tab" data-tab="ideas">2 · ໄອເດຍ & ຂໍ້ມູນ</button>
+      <button class="tab" data-tab="library">3 · ຄັງຄອນເທັນ</button>
+      <button class="tab" data-tab="approval">4 · ອະນຸມັດ <span id="pending-count" class="pill hidden"></span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Context -->
+    <section id="tab-context" class="panel active">
+      <div class="panel-head">
+        <div>
+          <h1>Context, ກຸ່ມເປົ້າໝາຍ ແລະ ແນວທາງຄອນເທັນ</h1>
+          <p class="muted">AI ຈະອ່ານຂໍ້ມູນນີ້ທຸກຄັ້ງກ່ອນຫາໄອເດຍ ແລະ ຂຽນຄອນເທັນ.</p>
+        </div>
+        <label class="btn ghost file-btn">
+          ນຳເຂົ້າໄຟລ໌ (.txt / .md / .json)
+          <input type="file" id="context-file" accept=".txt,.md,.markdown,.json" hidden>
+        </label>
+      </div>
+      <form id="context-form" class="grid-form">
+        <label>ຊື່ແບຣນ / ສູນຝຶກອົບຮົມ<input name="brandName" placeholder="ເຊັ່ນ LaoIT Academy"></label>
+        <label>Call to action ຫຼັກ<input name="cta" placeholder="ເຊັ່ນ ລົງທະບຽນຮຽນຟຣີ ທາງ m.me/laoit"></label>
+        <label class="full">ກ່ຽວກັບບໍລິການ<textarea name="about" rows="3" placeholder="ຈຸດເດັ່ນ, ຮູບແບບການສອນ, ໃບຢັ້ງຢືນ..."></textarea></label>
+        <label class="full">ຫຼັກສູດທີ່ມີ<textarea name="courses" rows="3" placeholder="Python ພື້ນຖານ, Web Development, Data Analytics, Cybersecurity..."></textarea></label>
+        <label class="full">ກຸ່ມເປົ້າໝາຍ<textarea name="audience" rows="3" placeholder="ນັກສຶກສາປີ 3-4, ພະນັກງານຢາກປ່ຽນສາຍງານ, ອາຍຸ 18-30, ຢູ່ວຽງຈັນ..."></textarea></label>
+        <label>ນ້ຳສຽງ / ສະໄຕລ໌<textarea name="tone" rows="3" placeholder="ເປັນກັນເອງ, ໃຫ້ກຳລັງໃຈ, ບໍ່ໃຊ້ຄຳສັບຍາກ..."></textarea></label>
+        <label>Content pillars<textarea name="contentPillars" rows="3" placeholder="Tips & Tricks, ອາຊີບໄອທີ, Trend ເຕັກໂນໂລຊີ, ເລື່ອງລາວຜູ້ຮຽນ..."></textarea></label>
+        <label>ສິ່ງທີ່ຄວນເຮັດ<textarea name="dos" rows="3"></textarea></label>
+        <label>ສິ່ງທີ່ຫ້າມເຮັດ<textarea name="donts" rows="3" placeholder="ບໍ່ສັນຍາວ່າຈະໄດ້ວຽກ 100%, ບໍ່ໂຈມຕີຄູ່ແຂ່ງ..."></textarea></label>
+        <label class="full">Hashtag ປະຈຳ<input name="hashtags" placeholder="#LaoIT #ຮຽນໄອທີ"></label>
+        <label class="full">ເອກະສານອ້າງອີງ / brand guideline ເພີ່ມເຕີມ<textarea name="references" rows="6" placeholder="ວາງ brand guideline, ຕົວຢ່າງໂພສທີ່ດີ, ຂໍ້ມູນລູກຄ້າ..."></textarea></label>
+        <div class="full actions">
+          <span id="context-saved" class="muted"></span>
+          <button class="btn primary" type="submit">ບັນທຶກ Context</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. Ideas -->
+    <section id="tab-ideas" class="panel">
+      <div class="panel-head">
+        <div>
+          <h1>ຫາໄອເດຍຈາກເລື່ອງທີ່ຄົນສົນໃຈ</h1>
+          <p class="muted">AI ຄົ້ນຫາ trend ລ່າສຸດທາງເວັບ ແລະ ດຶງຂໍ້ເທັດຈິງຈາກແຫຼ່ງທີ່ໜ້າເຊື່ອຖື ພ້ອມລິ້ງອ້າງອີງ.</p>
+        </div>
+      </div>
+      <form id="research-form" class="card research">
+        <label class="grow">ຫົວຂໍ້ທີ່ຢາກເນັ້ນ (ບໍ່ບັງຄັບ)
+          <input name="focus" placeholder="ເຊັ່ນ AI ກັບວຽກ, ທັກສະ Cloud ທີ່ຕະຫຼາດຕ້ອງການ, Cybersecurity ສຳລັບ SME">
+        </label>
+        <label>ຈຳນວນ
+          <select name="count"><option>3</option><option selected>5</option><option>8</option></select>
+        </label>
+        <button class="btn primary" type="submit">🔎 ຄົ້ນຫາໄອເດຍ</button>
+      </form>
+      <details class="card manual">
+        <summary>+ ເພີ່ມໄອເດຍເອງ</summary>
+        <form id="manual-idea-form" class="research">
+          <label class="grow">ຫົວຂໍ້<input name="title" required></label>
+          <label class="grow">ມຸມມອງ<input name="angle"></label>
+          <button class="btn" type="submit">ເພີ່ມ</button>
+        </form>
+      </details>
+      <div id="ideas-list" class="cards"></div>
+    </section>
+
+    <!-- 3. Library -->
+    <section id="tab-library" class="panel">
+      <div class="panel-head">
+        <div>
+          <h1>ຄັງຄອນເທັນ</h1>
+          <p class="muted">Carousel ແລະ Video script ທັງໝົດ — ແກ້ໄຂ, ສົ່ງອະນຸມັດ, ແລະ ສົ່ງຕໍ່ Google Flow.</p>
+        </div>
+        <div class="filters">
+          <input id="library-search" type="search" placeholder="ຄົ້ນຫາ...">
+          <select id="library-type">
+            <option value="">ທຸກຮູບແບບ</option>
+            <option value="carousel">Carousel</option>
+            <option value="video">Video</option>
+          </select>
+          <select id="library-status">
+            <option value="">ທຸກສະຖານະ</option>
+            <option value="draft">ຮ່າງ</option>
+            <option value="pending_approval">ລໍຖ້າອະນຸມັດ</option>
+            <option value="changes_requested">ຕ້ອງແກ້ໄຂ</option>
+            <option value="approved">ອະນຸມັດແລ້ວ</option>
+            <option value="sent_to_flow">ສົ່ງ Flow ແລ້ວ</option>
+          </select>
+        </div>
+      </div>
+      <div id="library-list" class="cards"></div>
+    </section>
+
+    <!-- 4. Approval -->
+    <section id="tab-approval" class="panel">
+      <div class="panel-head">
+        <div>
+          <h1>ລໍຖ້າອະນຸມັດ</h1>
+          <p class="muted">ກວດຫົວຂໍ້ ແລະ ເນື້ອຫາແຕ່ລະສະໄລ້ກ່ອນສົ່ງໄປສ້າງພາບ/ວິດີໂອໃນ Google Flow.</p>
+        </div>
+        <label>ຊື່ຜູ້ອະນຸມັດ<input id="approver-name" placeholder="ຊື່ຂອງທ່ານ"></label>
+      </div>
+      <div id="approval-list" class="cards"></div>
+    </section>
+  </main>
+
+  <!-- Content detail -->
+  <dialog id="content-dialog">
+    <div class="dialog-head">
+      <div>
+        <span id="dlg-type" class="tag"></span>
+        <span id="dlg-status" class="status"></span>
+        <h2 id="dlg-title"></h2>
+      </div>
+      <button class="icon-btn" data-close aria-label="ປິດ">✕</button>
+    </div>
+    <div id="dlg-body" class="dialog-body"></div>
+    <div id="dlg-actions" class="dialog-actions"></div>
+  </dialog>
+
+  <!-- Generate options -->
+  <dialog id="generate-dialog">
+    <form id="generate-form" method="dialog">
+      <div class="dialog-head">
+        <h2 id="gen-title">ສ້າງຄອນເທັນ</h2>
+        <button class="icon-btn" type="button" data-close aria-label="ປິດ">✕</button>
+      </div>
+      <div class="dialog-body grid-form">
+        <input type="hidden" name="ideaId">
+        <input type="hidden" name="type">
+        <label id="gen-slides">ຈຳນວນສະໄລ້
+          <select name="slides"><option>5</option><option selected>7</option><option>9</option><option>10</option></select>
+        </label>
+        <label id="gen-duration">ຄວາມຍາວວິດີໂອ (ວິນາທີ)
+          <select name="duration"><option>24</option><option selected>40</option><option>56</option><option>72</option></select>
+        </label>
+        <label class="full">ຄຳແນະນຳເພີ່ມເຕີມ (ບໍ່ບັງຄັບ)
+          <textarea name="notes" rows="3" placeholder="ເຊັ່ນ ເນັ້ນຫຼັກສູດ Python, ໃຊ້ສີຟ້າ-ສົ້ມ, ໃສ່ໂປຣໂມຊັນເດືອນນີ້"></textarea>
+        </label>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn primary" type="submit" value="go">✨ ສ້າງ</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div id="busy" class="busy hidden"><div class="spinner"></div><p id="busy-text">ກຳລັງເຮັດວຽກ...</p></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
